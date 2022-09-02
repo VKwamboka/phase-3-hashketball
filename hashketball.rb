@@ -168,14 +168,13 @@ def player_numbers(team_name)
   end
 end
 
-def player_stats(name)
-  home_players = game_hash[:home][:players]
-  away_players = game_hash[:away][:players]
-  all_players = home_players + away_players
-  all_players.find do |player_hash|
-    player_hash[:player_name] == name
+def player_stats(player_name)
+  all_players.find do |player| 
+    player[:player_name] == player_name 
   end
 end
+
+
 
 def big_shoe_player
   all_players.max_by do |player|
